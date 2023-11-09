@@ -18,6 +18,11 @@
         <!--Status bar color, customización-->
         <item name="android:statusBarColor" tools:targetApi="1">?attr/colorPrimaryVariant</item>
     </style>
+    
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="colorControlNormal">@color/white</item>
+        <item name="titleTextColor">@color/white</item>
+    </style>
 
     <style name="Theme.UberFem" parent="Base.Theme.UberFem" />
 </resources>
