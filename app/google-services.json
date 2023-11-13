@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "636361044090",
+    "project_id": "uber-fem",
+    "storage_bucket": "uber-fem.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636361044090:android:2ae29949e77d80465a4bc3",
+        "android_client_info": {
+          "package_name": "com.danielse.uberfem"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6sAWjvMGjEoWbdz_EQVcbB0WJ7PVm1j4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
