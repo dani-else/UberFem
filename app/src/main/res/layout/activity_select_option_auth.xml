@@ -35,6 +35,7 @@
             />
 
         <Button
+            android:id="@+id/btnGoToLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Iniciar sesión"
@@ -43,6 +44,7 @@
             android:layout_marginRight="30dp"/>
 
         <Button
+            android:id="@+id/btnGoToRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Registrarme"

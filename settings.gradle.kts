@@ -3,6 +3,8 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
+        jcenter()
+        //jcenter() se encuentra sin actualizaciones, pero lo inserto por si acaso
     }
 }
 dependencyResolutionManagement {
@@ -10,6 +12,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        // Código que aparecía en las consultas de video: maven {url 'https://jitpack.io'}
+        jcenter()
     }
 }
 

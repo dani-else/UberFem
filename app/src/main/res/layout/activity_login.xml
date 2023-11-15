@@ -46,9 +46,10 @@
                 android:layout_marginLeft="5dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Correo electrónico:"
+                    android:hint="Correo electrónico"
                     android:inputType="textEmailAddress">
                 </com.google.android.material.textfield.TextInputEditText>
             </com.google.android.material.textfield.TextInputLayout>
@@ -78,9 +79,10 @@
                 android:layout_marginLeft="5dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Contraseña:"
+                    android:hint="Contraseña"
                     android:inputType="textPassword">
                 </com.google.android.material.textfield.TextInputEditText>
             </com.google.android.material.textfield.TextInputLayout>
@@ -95,6 +97,7 @@
             android:layout_gravity="bottom">
 
             <Button
+                android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Ingresar"
