@@ -7,6 +7,10 @@
     android:fitsSystemWindows="true"
     tools:context=".LoginActivity">
 
+    <!--Incluir toolbar-->
+    <include layout="@layout/action_bar_toolbar"></include>
+
+
     <!--Contenedor general vertical-->
     <LinearLayout
         android:layout_width="match_parent"

@@ -7,12 +7,15 @@
     android:fitsSystemWindows="true"
     tools:context=".RegisterActivity">
 
+    <!--Incluir toolbar-->
+    <include layout="@layout/action_bar_toolbar"></include>
+
     <!--Contenedor general vertical-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="80dp"
         >
 
         <TextView
@@ -21,8 +24,7 @@
             android:text="Registro"
             android:textAlignment="center"
             android:textSize="30sp"
-            android:textColor="@color/colorPrimary"
-            ></TextView>
+            android:textColor="@color/colorPrimary" ></TextView>
 
         <!--Nombre Completo-->
         <LinearLayout
@@ -47,6 +49,7 @@
                 android:layout_marginLeft="5dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Nombre completo:"
@@ -79,6 +82,7 @@
                 android:layout_marginLeft="5dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Correo electrónico:"
@@ -111,6 +115,7 @@
                 android:layout_marginLeft="5dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Contraseña:"
@@ -128,6 +133,7 @@
             android:layout_gravity="bottom">
 
             <Button
+                android:id="@+id/btnRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Registrar"

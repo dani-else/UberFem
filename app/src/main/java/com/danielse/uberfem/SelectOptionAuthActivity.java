@@ -24,10 +24,8 @@ public class SelectOptionAuthActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Seleccionar opción");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //buttonSoyConductora = findViewById(R.id.btnSoyConductora);
-        //buttonSoyPasajera = findViewById(R.id.btnSoyPasajera);
-
         buttonGoToLogin = findViewById(R.id.btnGoToLogin);
+        buttonGoToRegister = findViewById(R.id.btnGoToRegister);
 
         buttonGoToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,10 +33,22 @@ public class SelectOptionAuthActivity extends AppCompatActivity {
                 goToLogin();
             }
         });
+
+        buttonGoToRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToRegister();
+            }
+        });
     }
 
     public void goToLogin(){
-            Intent intent = new Intent(SelectOptionAuthActivity.this, LoginActivity.class);
+        Intent intent = new Intent(SelectOptionAuthActivity.this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToRegister(){
+        Intent intent = new Intent(SelectOptionAuthActivity.this, RegisterActivity.class);
         startActivity(intent);
     }
 }
