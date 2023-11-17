@@ -10,9 +10,11 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Definición de botones
     Button buttonSoyConductora;
     Button buttonSoyPasajera;
 
+    //Definición de preferencia, para poder clasificar a las usuarias en conductoras o clientas
     SharedPreferences pref;
 
     @Override
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Instanciado de botones
         buttonSoyConductora = findViewById(R.id.btnSoyConductora);
         buttonSoyPasajera = findViewById(R.id.btnSoyPasajera);
 
@@ -27,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         pref = getApplicationContext().getSharedPreferences("typeUser", MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
 
-        //DRIVER
+        //OnClickListeners de Conductora y Clienta
         buttonSoyConductora.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //CLIENTE
         buttonSoyPasajera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //goTo para cambiar de Activity/View respectiva
     private void goToSelectAuth() {
         Intent intent = new Intent(MainActivity.this, SelectOptionAuthActivity.class);
         startActivity(intent);

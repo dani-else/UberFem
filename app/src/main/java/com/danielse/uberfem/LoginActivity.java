@@ -22,6 +22,7 @@ import dmax.dialog.SpotsDialog;
 
 public class LoginActivity extends AppCompatActivity {
 
+    //Definición de elementos de la View
     TextInputEditText textInputEmail;
     TextInputEditText textInputPassword;
     Button buttonLogin;
@@ -30,8 +31,9 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseAuth moduloAuth;
     DatabaseReference database;
 
-    // No usado aún: AlertDialog spotsDialog;
+    // No usado aún: AlertDialog spotsDialog; Lo quería para mostrar los puntitos de "Cargando" entre procesamiento de tareas, pero no es relevante aún
 
+    //Definición de Toolbar para importarla.
     Toolbar toolbar;
 
     @Override
@@ -39,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        //Instancias de Inputs de la View
         textInputEmail = findViewById(R.id.textInputEmail);
         textInputPassword = findViewById(R.id.textInputPassword);
         buttonLogin = findViewById(R.id.btnLogin);
@@ -48,14 +51,16 @@ public class LoginActivity extends AppCompatActivity {
         //Instanciar DatabaseReference
         database = FirebaseDatabase.getInstance().getReference();
 
-        //No usado aún: Instanciar Dialog de spots
+        //No usado aún: Instancia Dialog de spots
         //spotsDialog = new SpotsDialog.Builder().setContext(LoginActivity.this).setMessage("Espere un momento por favor").build();
 
+        //Importado del Toolbar.
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Login");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        //OnClickListener del Botón de Login, que me redirije al método login()
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,10 +69,13 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    //Método de Login, encargado del inicio de sesión
     private void login() {
+        //Definición de e-mail y contraseña, datos obtenidos de la view
         String email = textInputEmail.getText().toString();
         String password = textInputPassword.getText().toString();
 
+        //Validación de rellenado de campos
         if (!email.isEmpty() && !password.isEmpty()){
             if (password.length() >= 6){
                 //No usado aún: spotsDialog().show; para que se muestre
@@ -87,6 +95,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         }else {
             Toast.makeText(LoginActivity.this, "El correo electrónico y la contraseña son obligatorios", Toast.LENGTH_SHORT).show();
-        }
+        }//Esas fueron las rutas alternativas en caso de que los "if" no sean exitosos.
     }
 }
