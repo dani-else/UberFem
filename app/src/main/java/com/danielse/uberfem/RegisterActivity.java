@@ -18,12 +18,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import includes.MyToolbar;
 import models.User;
 
 public class RegisterActivity extends AppCompatActivity {
-
-    //Definición de Toolbar para importarla.
-    Toolbar toolbar;
 
     //Obtener opción de registro (Conductora o pasajera).
     SharedPreferences pref;
@@ -43,11 +41,8 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        //Importado del Toolbar.
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Seleccionar opción");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //Llamado del Toolbar.
+        MyToolbar.show(this, "Registro", true);
 
         //Instancia SharedPreference para tipo de usuaria (Conductora/Pasajera).
         pref = getApplicationContext().getSharedPreferences("typeUser", MODE_PRIVATE);

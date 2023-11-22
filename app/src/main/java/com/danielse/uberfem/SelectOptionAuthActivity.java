@@ -8,10 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import includes.MyToolbar;
+
 public class SelectOptionAuthActivity extends AppCompatActivity {
 
-    //Definición de Toolbar para importarla.
-    Toolbar toolbar;
 
     //Definición de los dos botones
     Button buttonGoToLogin;
@@ -22,11 +22,8 @@ public class SelectOptionAuthActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_option_auth);
 
-        //Importado del Toolbar.
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Seleccionar opción");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //Llamado del Toolbar.
+        MyToolbar.show(this, "Volver a selección", true);
 
         //Instancia de ambos botones
         buttonGoToLogin = findViewById(R.id.btnGoToLogin);

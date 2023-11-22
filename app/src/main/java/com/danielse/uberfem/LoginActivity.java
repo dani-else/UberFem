@@ -19,6 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import dmax.dialog.SpotsDialog;
+import includes.MyToolbar;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -32,9 +33,6 @@ public class LoginActivity extends AppCompatActivity {
     DatabaseReference database;
 
     // No usado aún: AlertDialog spotsDialog; Lo quería para mostrar los puntitos de "Cargando" entre procesamiento de tareas, pero no es relevante aún
-
-    //Definición de Toolbar para importarla.
-    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,11 +52,8 @@ public class LoginActivity extends AppCompatActivity {
         //No usado aún: Instancia Dialog de spots
         //spotsDialog = new SpotsDialog.Builder().setContext(LoginActivity.this).setMessage("Espere un momento por favor").build();
 
-        //Importado del Toolbar.
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Login");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //Llamado del Toolbar.
+        MyToolbar.show(this, "Login", true);
 
         //OnClickListener del Botón de Login, que me redirije al método login()
         buttonLogin.setOnClickListener(new View.OnClickListener() {
