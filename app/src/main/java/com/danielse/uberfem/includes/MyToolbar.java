@@ -1,4 +1,4 @@
-package includes;
+package com.danielse.uberfem.includes;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;

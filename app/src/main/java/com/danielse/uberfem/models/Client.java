@@ -1,4 +1,4 @@
-package models;
+package com.danielse.uberfem.models;
 
 public class Client {
 

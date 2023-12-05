@@ -1,15 +1,16 @@
-package com.danielse.uberfem;
+package activities;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.danielse.uberfem.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -18,8 +19,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import dmax.dialog.SpotsDialog;
-import includes.MyToolbar;
+import com.danielse.uberfem.includes.MyToolbar;
+
+import activities.client.MapClientActivity;
+import activities.driver.MapDriverActivity;
+import activities.driver.RegisterDriverActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -31,6 +35,10 @@ public class LoginActivity extends AppCompatActivity {
     //Firebase Auth
     FirebaseAuth moduloAuth;
     DatabaseReference database;
+
+    //Obtener opción de login (Conductora o pasajera)
+    SharedPreferences pref;
+
 
     // No usado aún: AlertDialog spotsDialog; Lo quería para mostrar los puntitos de "Cargando" entre procesamiento de tareas, pero no es relevante aún
 
@@ -48,6 +56,9 @@ public class LoginActivity extends AppCompatActivity {
         moduloAuth = FirebaseAuth.getInstance();
         //Instanciar DatabaseReference
         database = FirebaseDatabase.getInstance().getReference();
+
+        //Instancia SharedPreference para tipo de usuaria (Conductora/Pasajera).
+        pref = getApplicationContext().getSharedPreferences("typeUser", MODE_PRIVATE);
 
         //No usado aún: Instancia Dialog de spots
         //spotsDialog = new SpotsDialog.Builder().setContext(LoginActivity.this).setMessage("Espere un momento por favor").build();
@@ -79,7 +90,24 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful())
                         {
-                            Toast.makeText(LoginActivity.this, "Login exitoso", Toast.LENGTH_SHORT).show();
+                            String userType = pref.getString("user", "");
+
+                            if (userType.equals("client")){
+                                //Toast.makeText(LoginActivity.this, "Login exitoso", Toast.LENGTH_SHORT).show();
+                                //Ese Toast puede ser usado como medio de verificación de funcionamiento.
+                                Intent intent = new Intent(LoginActivity.this, MapClientActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(intent);
+                                //Con esto, tras iniciar sesion, no permito que se vuelva a la pantalla de "Login".
+
+                            }else if (userType.equals("driver")){
+                                //Toast.makeText(LoginActivity.this, "Login exitoso", Toast.LENGTH_SHORT).show();
+                                //Ese Toast puede ser usado como medio de verificación de funcionamiento.
+                                Intent intent = new Intent(LoginActivity.this, MapDriverActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(intent);
+                                //Con esto, tras iniciar sesion, no permito que se vuelva a la pantalla de "Login".
+                            }
                         }else{
                             Toast.makeText(LoginActivity.this, "Correo o contraseña incorrectos", Toast.LENGTH_SHORT).show();
                         }

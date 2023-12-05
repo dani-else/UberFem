@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="activities.client.RegisterActivity">
+    tools:context="activities.driver.RegisterDriverActivity">
 
     <!--Incluir toolbar-->
     <include layout="@layout/action_bar_toolbar"></include>
@@ -41,7 +41,7 @@
                 android:layout_marginTop="10dp"
                 android:src="@drawable/icon_user">
             </ImageView>
-            
+
             <!--Input Nombre Completo-->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -91,6 +91,69 @@
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
+        <!--Marca Vehículo-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            >
+
+            <!--Ícono-->
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/icon_car">
+            </ImageView>
+
+            <!--Input Marca Vehículo-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputvehiculoMarca"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Marca del Vehículo"
+                    android:inputType="textEmailAddress">
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <!--Patente Vehículo-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            >
+
+            <!--Ícono-->
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/icon_plate">
+            </ImageView>
+
+            <!--Input Patente Vehículo-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputvehiculoPatente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Patente del Vehículo"
+                    android:inputType="textEmailAddress">
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
 
         <!--Password-->
         <LinearLayout
@@ -123,7 +186,6 @@
                 </com.google.android.material.textfield.TextInputEditText>
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
-
 
         <!--Layout para acomodar Button-->
         <LinearLayout
