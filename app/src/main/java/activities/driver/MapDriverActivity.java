@@ -2,19 +2,13 @@ package activities.driver;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+
 
 import com.danielse.uberfem.R;
-import com.danielse.uberfem.providers.AuthProvider;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-
-import activities.MainActivity;
-import activities.client.MapClientActivity;
 
 public class MapDriverActivity extends AppCompatActivity implements OnMapReadyCallback {
 

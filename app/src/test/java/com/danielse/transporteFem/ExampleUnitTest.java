@@ -1,4 +1,4 @@
-package com.danielse.uberfem;
+package com.danielse.transporteFem;
 
 import org.junit.Test;
 

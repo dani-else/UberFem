@@ -4,26 +4,22 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+
+import com.danielse.transporteFem.includes.MyToolbar;
+import com.danielse.transporteFem.models.Driver;
+import com.danielse.transporteFem.providers.AuthProvider;
+import com.danielse.transporteFem.providers.DriverProvider;
 import com.danielse.uberfem.R;
-import com.danielse.uberfem.includes.MyToolbar;
-import com.danielse.uberfem.models.Client;
-import com.danielse.uberfem.models.Driver;
-import com.danielse.uberfem.providers.AuthProvider;
-import com.danielse.uberfem.providers.ClientProvider;
-import com.danielse.uberfem.providers.DriverProvider;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-
-import activities.client.RegisterActivity;
 
 public class RegisterDriverActivity extends AppCompatActivity {
 

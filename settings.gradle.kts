@@ -17,6 +17,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Uber Fem"
+rootProject.name = "Transporte Fem"
 include(":app")
  

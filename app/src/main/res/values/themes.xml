@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.UberFem" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.Transporfem" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
 
@@ -24,5 +24,5 @@
         <item name="titleTextColor">@color/white</item>
     </style>
 
-    <style name="Theme.UberFem" parent="Base.Theme.UberFem" />
+    <style name="Theme.Transporfem" parent="Base.Theme.Transporfem" />
 </resources>
